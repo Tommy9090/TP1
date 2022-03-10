@@ -14,7 +14,7 @@ static void* allocate(size_t size) {
 
 typedef struct item {
 	char* nom;
-	int valeur;
+	int valeur; //size_t
 }item;
 
 typedef struct Node {
@@ -23,13 +23,19 @@ typedef struct Node {
 	Node* next;
 }Node;
 
-void Add(Node* node, void* newdata);
+/*typedef struct stack {
+	void** data;
+	size_t max_size; //int
+	size_t top; //int
+};*/
+
+void Add(Node* currNode, void* newData);
 
 void Remove(Node* node);
 
 void Sort(Node* node, int valeur);
 
-item* FindByPos(Node* pos);
+item* FindByPos(Node* head, Node* pos);
 
 item* FindByName(Node* node, char* name);
 
