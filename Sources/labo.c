@@ -8,9 +8,9 @@ void Add(Node* node, void* newData)
 {
 	Node* nextNode = allocate(sizeof(Node));
 	nextNode->data = newData;
-	nextNode->prev = node; // ou node->prev
+	nextNode->prev = node;
 	nextNode->next = node->next;
-	node->next = nextNode; // ou node->prev
+	node->next = nextNode;
 	nextNode->prev->next = nextNode;
 }
 
@@ -23,7 +23,7 @@ void Remove(Node* node)
 		last->prev->next = NULL;
 		last->prev = NULL;
 		last->next = NULL;
-		//return
+
 	}
 }
 
